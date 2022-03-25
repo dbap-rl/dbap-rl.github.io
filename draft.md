@@ -129,6 +129,13 @@ As described in Sections 3, 4, the agent must practice reaching the goals of int
 
 **Data collection.** We make use of a teleoperation system to provide a continuous sequence of multi-task demonstrations. We collect ``play-style'' (<dt-cite key="lynch2020learning">Lynch et al.</dt-cite>, <dt-cite key="gupta2019relay">Gupta et al.</dt-cite>) demonstrations, where different tasks are attempted successfully one after the other, indicating both how tasks are solved and how they may be sequenced. We make a simple change to the data collection procedure where the user indicates when a particular goal state of interest is completed before transitioning over to demonstrating a different goal. This allows the algorithm to easily determine the goals of interest as the transition points between these human-provided demonstrations. We provide around $500$ demonstrations in the real world, requiring $2.5$ hours of data collection time. 
 
+<div class="figure">
+  <video src="assets/mp4/DBAP_teleop.mp4" autoplay loop playsinline muted></video>
+  <figcaption>
+	Figure 3: Demonstrated play style data collected from human tele-operation.
+  </figcaption>
+</div>
+
 
 **Simulation Environment**
 
@@ -186,6 +193,27 @@ DBAP starts off doing reasonably well during pre-training, achieving a $83\%$ su
 
 
 In comparison, the no-pretraining, from-scratch baseline results in 0\% success rate. This indicates the importance of being able to incorporate prior data, as is done in DBAP, to overcome hard exploration challenges inherent in long horizon manipulation. DBAP also significantly outperforms imitation learning in terms of long horizon goal-reaching performance. We compare the number of tasks commanded to accomplish the multi-step goals and observe the average path length is significantly lower for our method than baselines. 
+
+<div class="figure">
+  <video src="assets/mp4/DBAP_prefinetuning.mp4" autoplay loop playsinline muted></video>
+  <figcaption>
+	Figure 3: Initial Performance of Offline Trained Policy
+  </figcaption>
+</div>
+
+<div class="figure">
+  <video src="assets/mp4/DBAP_resetfreefinetuning.mp4" autoplay loop playsinline muted></video>
+  <figcaption>
+	Figure 4: Reset-Free Training Procedure. One reset every 50 mins. 
+  </figcaption>
+</div>
+
+<div class="figure">
+  <video src="assets/mp4/DBAP_final.mp4" autoplay loop playsinline muted></video>
+  <figcaption>
+	Figure 5: Final long horizon performance
+  </figcaption>
+</div>
 
 |  | Success Rate  | Path Length  |
 |:---:|:---:|:---:|
