@@ -203,14 +203,14 @@ DBAP starts off doing reasonably well during pre-training, achieving a $83\%$ su
 In comparison, the no-pretraining, from-scratch baseline results in 0\% success rate. This indicates the importance of being able to incorporate prior data, as is done in DBAP, to overcome hard exploration challenges inherent in long horizon manipulation. DBAP also significantly outperforms imitation learning in terms of long horizon goal-reaching performance. We compare the number of tasks commanded to accomplish the multi-step goals and observe the average path length is significantly lower for our method than baselines. 
 
 <div class="figure">
-  <video src="assets/mp4/DBAP_prefine-tuning.mp4" autoplay loop playsinline muted></video>
+  <video src="assets/mp4/DBAP_prefinetuning.mp4" autoplay loop playsinline muted></video>
   <figcaption>
 	Figure 7: Initial Performance of Offline Trained Policy
   </figcaption>
 </div>
 
 <div class="figure">
-  <video src="assets/mp4/DBAP_resetfreefine-tuning.mp4" autoplay loop playsinline muted></video>
+  <video src="assets/mp4/DBAP_resetfreefinetuning.mp4" autoplay loop playsinline muted></video>
   <figcaption>
 	Figure 8: Reset-Free Training Procedure. One reset every 50 mins. 
   </figcaption>
