@@ -1,14 +1,14 @@
 ## Quick Overview
 
-The key idea in this work is to leverage a small amount of human provided data with multi-task reinforcement learning to build a robotic learning system that can continue improving with minimal human intervention required in the training process. 
+The key idea in this work is to leverage a small amount of human-provided data with multi-task reinforcement learning to build a robotic learning system that can continue improving with minimal human intervention required in the training process by **practicing autonomously**. 
 
-**1)** The human provided data is used to bootstrap a low level goal reaching policy with offline reinforcement learning.
+**1)** The human provided data is used to bootstrap a low-level goal reaching policy with offline reinforcement learning.
 
-**2)** The human data is also used to build a graph that indicates which goals are reachable from other goals, which is then used to command goals for the low level policy using a graph search algorithm
+**2)** The human data is also used to build a graph that indicates which goals are reachable from other goals, which is then used to command goals for the low-level policy using a graph search algorithm.
 
-**3)** The high level goal selector continually selects goals for the low level policy to attempt, autonomously improving the behavior of the system with RL. By leveraging different tasks to reset each other, minimal human intervention is needed. 
+**3)** The high-level goal selector continually selects goals for the low-level policy to attempt, **autonomously practicing** improving the behavior of the system with RL. By leveraging different tasks to reset each other, minimal human intervention is needed. 
 
-**4)** The system leverages large amounts of data to improve robot behavior significantly over pre-trained offline performance and solve long horizon tasks in a kitchen environment. 
+**4)** The system leverages large amounts of data to improve robot behavior significantly over pre-trained offline performance and solve long horizon tasks in a kitchen environment. The provided data is used to bootstrap **both** the low-level goal-reaching policy and the high-level practicing mechanism. 
 
 <div class="figure">
 <img src="assets/figs/teaser_compressed_ICRA.png" style="margin: 0; width: 100%;"/>
