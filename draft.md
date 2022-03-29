@@ -1,3 +1,13 @@
+## Quick Overview
+
+<div class="figure">
+  <video src="assets/mp4/DBAP_overview.mp4" autoplay loop playsinline></video>
+  <figcaption>
+	Overview of Demonstration Bootstrapped Autonomous Practicing
+  </figcaption>
+</div>
+
+
 ## Abstract
 
 Reinforcement learning systems have the potential to enable continuous improvement in unstructured environments, leveraging data collected autonomously. However, in practice these systems require significant amounts of instrumentation or human intervention to learn in the real world. In this work, we propose a system for reinforcement learning that leverages multi-task reinforcement learning bootstrapped with prior data to enable continuous autonomous practicing, minimizing the number of resets needed while being able to learn temporally extended behaviors. We show how appropriately provided prior data can help bootstrap both low-level multi-task policies and strategies for sequencing these tasks one after another to enable learning with minimal resets. This mechanism enables our robotic system to practice with minimal human intervention at training time, while being able to solve long horizon tasks at test time. We show the efficacy of the proposed system on a challenging kitchen manipulation task both in simulation and the real world, demonstrating the ability to practice autonomously in order to solve temporally extended problems.
@@ -254,3 +264,8 @@ These studies suggest that DBAP is able to both enable autonomous practicing wit
 We leverage human-provided data to bootstrap a multi-task RL system, using some tasks to provide resets for others. Our method combines offline RL at the low level and model-based graph search at the high level, where prior data is used to bootstrap low-level policies as well as facilitate practicing. We demonstrated the success of this system on both simulated and real-world kitchen environments.
 
 However, this work has several limitations. It requires tasks to be discretely defined, which is done by thresholding low-level states. Extending to high dimensional problems is an interesting avenue for future work. The algorithm assumes that the environment does not transition into "irreversible" states. This assumption is common in reset-free RL (<dt-cite key="gupta2021reset">Gupta et al.</dt-cite>, <dt-cite key="zhu2020ingredients">Zhu et al.</dt-cite>, <dt-cite key="eysenbach2017leave">Eysenbach et al.</dt-cite>), and encompasses a range of robotics problems. Expanding the system to cope with scenarios where the kettle falls off the table or the environment goes into irrecoverable states would be an interesting future direction.
+
+
+## Acknowledgements
+
+This authors would like to thank several colleagues at Robotics at Google and UC Berkeley, specifically Thinh Nguyen and Gus [TODO] for their contributions with building the hardware setup and Archit Sharma, Kelvin Xu, Justin Yu, Vikash Kumar for helpful discussions. The authors would also like to acknowledge funding from the Office of Naval Research (ONR) for SL and AG. 
