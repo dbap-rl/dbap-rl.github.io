@@ -85,7 +85,7 @@ $\theta_{k+1} = \max_\theta \mathbb{E}_{s, a} \left[\log \pi_\theta(a|s) \exp \l
 
 where is $A$ is the advantage function, and $\lambda$ is a hyper-parameter. Since the actor update in AWAC samples and re-weights the actions from the previous policy, it implicitly constrains the policy. We directly build on this framework for policy bootstrapping but in the following section show how we can additionally bootstrap autonomous practicing from offline data as well.  
 
-## 4. Demonstration Augmented Autonomous Practicing for Multi-Task Reinforcement Learning
+## 4. Demonstration Bootstrapped Autonomous Practicing for Multi-Task Reinforcement Learning
 
 
 <div class="figure">
