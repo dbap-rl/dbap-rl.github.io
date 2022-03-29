@@ -1,12 +1,32 @@
 ## Quick Overview
 
+The key idea in this work is to leverage a small amount of human provided data with multi-task reinforcement learning to build a robotic learning system that can continue improving with minimal human intervention required in the training process. 
+
+**1)** The human provided data is used to bootstrap a low level goal reaching policy with offline reinforcement learning.
+
+**2)** The human data is also used to build a graph that indicates which goals are reachable from other goals, which is then used to command goals for the low level policy using a graph search algorithm
+
+**3)** The high level goal selector continually selects goals for the low level policy to attempt, autonomously improving the behavior of the system with RL. By leveraging different tasks to reset each other, minimal human intervention is needed. 
+
+**4)** The system leverages large amounts of data to improve behavior significantly over pre-trained offline performance and solve long horizon tasks in a kitchen environment. 
+
 <div class="figure">
-  <video src="assets/mp4/DBAP_overview.mp4" autoplay loop playsinline></video>
+<img src="assets/figs/teaser_compressed_ICRA.png" style="margin: 0; width: 100%;"/>
+<figcaption>
+System Overview of Demonstration Bootstrapped Autonomous Practicing
+</figcaption>
+</div>
+
+Find a short video describing the method below:
+
+<div class="figure">
+  <video src="assets/mp4/DBAP_overview.mp4" autoplay loop playsinline controls></video>
   <figcaption>
 	Overview of Demonstration Bootstrapped Autonomous Practicing
   </figcaption>
 </div>
 
+Find a full interactive paper below:
 
 ## Abstract
 
@@ -268,4 +288,4 @@ However, this work has several limitations. It requires tasks to be discretely d
 
 ## Acknowledgements
 
-This authors would like to thank several colleagues at Robotics at Google and UC Berkeley, specifically Thinh Nguyen and Gus [TODO] for their contributions with building the hardware setup and Archit Sharma, Kelvin Xu, Justin Yu, Vikash Kumar for helpful discussions. The authors would also like to acknowledge funding from the Office of Naval Research (ONR) for SL and AG. 
+This authors would like to thank several colleagues at Robotics at Google and UC Berkeley, specifically Thinh Nguyen, Gus [TODO], Michael Ahn, Ken Oslund and Sherry Moore for their contributions with building the hardware setup and Archit Sharma, Kelvin Xu, Justin Yu, Vikash Kumar for helpful discussions. The authors would also like to acknowledge funding from the Office of Naval Research (ONR) for SL and AG. 

@@ -73,12 +73,25 @@
 </dt-byline>
 </dt-byline>
 <h2>Quick Overview</h2>
+<p>The key idea in this work is to leverage a small amount of human provided data with multi-task reinforcement learning to build a robotic learning system that can continue improving with minimal human intervention required in the training process.</p>
+<p><strong>1)</strong> The human provided data is used to bootstrap a low level goal reaching policy with offline reinforcement learning.</p>
+<p><strong>2)</strong> The human data is also used to build a graph that indicates which goals are reachable from other goals, which is then used to command goals for the low level policy using a graph search algorithm</p>
+<p><strong>3)</strong> The high level goal selector continually selects goals for the low level policy to attempt, autonomously improving the behavior of the system with RL. By leveraging different tasks to reset each other, minimal human intervention is needed.</p>
+<p><strong>4)</strong> The system leverages large amounts of data to improve behavior significantly over pre-trained offline performance and solve long horizon tasks in a kitchen environment.</p>
 <div class="figure">
-  <video src="assets/mp4/DBAP_overview.mp4" autoplay loop playsinline></video>
+<img src="assets/figs/teaser_compressed_ICRA.png" style="margin: 0; width: 100%;"/>
+<figcaption>
+System Overview of Demonstration Bootstrapped Autonomous Practicing
+</figcaption>
+</div>
+<p>Find a short video describing the method below:</p>
+<div class="figure">
+  <video src="assets/mp4/DBAP_overview.mp4" autoplay loop playsinline controls></video>
   <figcaption>
 	Overview of Demonstration Bootstrapped Autonomous Practicing
   </figcaption>
 </div>
+<p>Find a full interactive paper below:</p>
 <h2>Abstract</h2>
 <p>Reinforcement learning systems have the potential to enable continuous improvement in unstructured environments, leveraging data collected autonomously. However, in practice these systems require significant amounts of instrumentation or human intervention to learn in the real world. In this work, we propose a system for reinforcement learning that leverages multi-task reinforcement learning bootstrapped with prior data to enable continuous autonomous practicing, minimizing the number of resets needed while being able to learn temporally extended behaviors. We show how appropriately provided prior data can help bootstrap both low-level multi-task policies and strategies for sequencing these tasks one after another to enable learning with minimal resets. This mechanism enables our robotic system to practice with minimal human intervention at training time, while being able to solve long horizon tasks at test time. We show the efficacy of the proposed system on a challenging kitchen manipulation task both in simulation and the real world, demonstrating the ability to practice autonomously in order to solve temporally extended problems.</p>
 <hr>
@@ -262,7 +275,7 @@ As shown in Fig  7 (left), our method  successfully reaches a variety of multi-s
 <p>We leverage human-provided data to bootstrap a multi-task RL system, using some tasks to provide resets for others. Our method combines offline RL at the low level and model-based graph search at the high level, where prior data is used to bootstrap low-level policies as well as facilitate practicing. We demonstrated the success of this system on both simulated and real-world kitchen environments.</p>
 <p>However, this work has several limitations. It requires tasks to be discretely defined, which is done by thresholding low-level states. Extending to high dimensional problems is an interesting avenue for future work. The algorithm assumes that the environment does not transition into &quot;irreversible&quot; states. This assumption is common in reset-free RL (<dt-cite key="gupta2021reset">Gupta et al.</dt-cite>, <dt-cite key="zhu2020ingredients">Zhu et al.</dt-cite>, <dt-cite key="eysenbach2017leave">Eysenbach et al.</dt-cite>), and encompasses a range of robotics problems. Expanding the system to cope with scenarios where the kettle falls off the table or the environment goes into irrecoverable states would be an interesting future direction.</p>
 <h2>Acknowledgements</h2>
-<p>This authors would like to thank several colleagues at Robotics at Google and UC Berkeley, specifically Thinh Nguyen and Gus [TODO] for their contributions with building the hardware setup and Archit Sharma, Kelvin Xu, Justin Yu, Vikash Kumar for helpful discussions. The authors would also like to acknowledge funding from the Office of Naval Research (ONR) for SL and AG.</p>
+<p>This authors would like to thank several colleagues at Robotics at Google and UC Berkeley, specifically Thinh Nguyen, Gus [TODO], Michael Ahn, Ken Oslund and Sherry Moore for their contributions with building the hardware setup and Archit Sharma, Kelvin Xu, Justin Yu, Vikash Kumar for helpful discussions. The authors would also like to acknowledge funding from the Office of Naval Research (ONR) for SL and AG.</p>
 </dt-article>
 <dt-appendix>
 <h2>Acknowledgments</h2>
