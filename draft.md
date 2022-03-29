@@ -6,7 +6,7 @@ The key idea in this work is to leverage a small amount of human-provided data w
 
 **2)** The human data is also used to build a graph that indicates which goals are reachable from other goals, which is then used to command goals for the low-level policy using a graph search algorithm.
 
-**3)** The high-level goal selector continually selects goals for the low-level policy to attempt, **autonomously practicing** improving the behavior of the system with RL. By leveraging different tasks to reset each other, minimal human intervention is needed. 
+**3)** The high-level goal selector continually selects goals for the low-level policy to attempt, allowing the agent to **autonomously practice** the behavior which leads to the overall success-rate improvement with RL, while requiring minimal human intervention. 
 
 **4)** The system leverages large amounts of data to improve robot behavior significantly over pre-trained offline performance and solve long horizon tasks in a kitchen environment. The provided data is used to bootstrap **both** the low-level goal-reaching policy and the high-level practicing mechanism. 
 
