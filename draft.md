@@ -8,7 +8,7 @@ The key idea in this work is to leverage a small amount of human provided data w
 
 **3)** The high level goal selector continually selects goals for the low level policy to attempt, autonomously improving the behavior of the system with RL. By leveraging different tasks to reset each other, minimal human intervention is needed. 
 
-**4)** The system leverages large amounts of data to improve behavior significantly over pre-trained offline performance and solve long horizon tasks in a kitchen environment. 
+**4)** The system leverages large amounts of data to improve robot behavior significantly over pre-trained offline performance and solve long horizon tasks in a kitchen environment. 
 
 <div class="figure">
 <img src="assets/figs/teaser_compressed_ICRA.png" style="margin: 0; width: 100%;"/>
