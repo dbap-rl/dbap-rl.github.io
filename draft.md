@@ -131,6 +131,13 @@ $\max_{s_g^i \in S_g^i} \mathcal{H}(\mathcal{U}, \rho + \text{Djikstra}(s, s_g^i
 
 where $\rho$ is the current marginal distribution (represented as a categorical distribution) over goal states of interest, $\text{Dijkstra}(s, s_g^i)$ computes the shortest distances between current state $s$ and $s_g^i$ and the goal is to bring the updated density as closer to uniform $\mathcal{U}$. We overload the $+$ operator here to denote an update to the density $\rho$ when accounting for new states.}. A detailed description can be found in Algorithm 1.
 
+<div class="figure">
+  <video width="84" height="84" src="assets/mp4/task_sequencing_DBAP.mp4" autoplay loop playsinline muted></video>
+  <figcaption>
+	Cartoon depiction of goal selection during autonomous practicing via graph search
+  </figcaption>
+</div>
+
 **Task sequencing for long-horizon tasks (test time).** Next, we ask how short-term behaviors learned by the multi-task policy $\pi_\theta(a|s, s_g)$ can be sequenced to accomplish long-horizon goals. We note that the same graph search mechanism used for autonomous practicing at training time can be reused to sequence appropriate sub-goals at test time to accomplish long horizon tasks.
 
 More formally, given a target goal of interest $s_g^j$ when the agent is at a particular state $s$, we can use the estimated graph $\mathcal{G}$ via Dijkstra's algorithm to compute the shortest path between the current state and the goal of interest $s_g^j$, $\tau = [s, s_g^1, s_g^2, ..., s_g^j]$. The next goal state of interest in the path $s_g^1$ is then chosen as the next goal commanded to the multi task policy $\pi(a|s, s_g^1)$ and executed for a single episode of $T$ steps till the agent reaches $s_1$. This procedure is repeated until the agent accomplishes $s_g^j$. Further details on these procedures can be found in Algorithm 1 and Algorithm 2. 
