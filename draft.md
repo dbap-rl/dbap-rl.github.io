@@ -20,7 +20,7 @@ System Overview of Demonstration Bootstrapped Autonomous Practicing
 Find a short video describing the method below:
 
 <div class="figure">
-  <video src="assets/mp4/DBAP_overview.mp4" autoplay loop playsinline controls></video>
+  <video src="assets/mp4/DBAP_overview_slowed.mp4" autoplay loop playsinline controls></video>
   <figcaption>
 	Overview of Demonstration Bootstrapped Autonomous Practicing
   </figcaption>
